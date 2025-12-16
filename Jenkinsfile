@@ -15,7 +15,7 @@ pipeline {
     stage('Docker') {
             steps {
                 sh 'sudo docker login -u ${DOCKERHUB_CREDENTIALS_USR} -p ${DOCKERHUB_CREDENTIALS_PSW}'
-                sh 'sudo docker build /home/ubuntu/jenkins/workspace -t pra5anth/prt'
+                sh 'sudo docker build /home/ubuntu/jenkins/workspace/prt/ -t pra5anth/prt'
                 sh 'sudo docker push pra5anth/prt'
             }
         }

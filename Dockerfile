@@ -1,5 +1,5 @@
 FROM ubuntu
 RUN apt update
-RUN apt install nginx -y
-ADD . /var/www/html/
+RUN apt install apache2 -y
+COPY index.html /var/www/html/index.html
 ENTRYPOINT nginx -D FOREGROUND

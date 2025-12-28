@@ -21,8 +21,8 @@ pipeline {
         }
     stage('K8s') {
             steps {
-                sh '
-
+                sh 'sudo docker pull pra5anth/empl:latest'
+                sh 'sudo docker run -d -p 8081:80 pra5anth/empl:latest'
             }
         }
     }

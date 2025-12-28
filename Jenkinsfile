@@ -15,13 +15,16 @@ pipeline {
     stage('Docker') {
             steps {
                 sh 'sudo docker login -u ${DOCKERHUB_CREDENTIALS_USR} -p ${DOCKERHUB_CREDENTIALS_PSW}'
-                sh 'sudo docker build /home/ubuntu/jenkins/workspace/prt/ -t pra5anth/prt'
-                sh 'sudo docker push pra5anth/prt'
+                sh 'sudo docker build /home/ubuntu/jenkins/workspace/empl/ -t pra5anth/empl'
+                sh 'sudo docker push pra5anth/empl'
             }
         }
     stage('K8s') {
             steps {
                 sh 'kubectl apply -f deploy.yaml'
+                sh 'kubectl apply -f namespace.yaml'
+                sh 'kubectl apply -f service.yaml
+
             }
         }
     }

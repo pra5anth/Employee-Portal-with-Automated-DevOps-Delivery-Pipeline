@@ -21,9 +21,7 @@ pipeline {
         }
     stage('K8s') {
             steps {
-                sh 'kubectl apply -f deploy.yaml --validate=false'
-                sh 'kubectl apply -f namespace.yaml'
-                sh 'kubectl apply -f service.yaml'
+                sh '
 
             }
         }

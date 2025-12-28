@@ -3,19 +3,19 @@ kind: Deployment
 metadata:
   name: mydeployment
   labels:
-    app: nginx
+    app: apache
 spec:
   replicas: 5
   selector:
     matchLabels:
-      app: nginx
+      app: apache
   template:
     metadata:
       labels:
-        app: nginx
+        app: apache
     spec:
       containers:
       - name: mydeploymentcont
-        image: pra5anth/pras:latest
+        image: pra5anth/empl:latest
         ports:
         - containerPort: 80

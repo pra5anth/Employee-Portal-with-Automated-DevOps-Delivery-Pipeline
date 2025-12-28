@@ -3,7 +3,7 @@ pipeline {
         DOCKERHUB_CREDENTIALS = credentials("dhubb")
     }
     agent {
-        label 'localhost'
+        label 'bastion'
     }
 
     stages {
